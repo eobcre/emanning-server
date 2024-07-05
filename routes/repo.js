@@ -18,10 +18,9 @@ router.get('/repos', async (req, res) => {
   const repoURL = process.env.URL;
 
   try {
-    const res = await fetch(repoURL);
-    const data = await res.json();
+    const response = await fetch(repoURL);
+    const data = await response.json();
     const repos = data.items.slice(0, 6);
-    // console.log(repos);
     res.json(repos);
   } catch (error) {
     console.error('Error fetching data.', error);
@@ -30,3 +29,4 @@ router.get('/repos', async (req, res) => {
 });
 
 module.exports = router;
+
