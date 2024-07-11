@@ -8,7 +8,8 @@ const emailRouter = require('./routes/email');
 
 dotenv.config();
 
-app.use(cors());
+app.use(cors({ origin: 'https://emanningdev' }));
+// app.use(cors());
 app.use(bodyParser.json());
 app.use('/api', repoRouter);
 app.use('/api', emailRouter);
