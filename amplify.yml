@@ -9,7 +9,8 @@ applications:
           commands: []
       artifacts:
         baseDirectory: ''
-        files: []
+        files:
+          - '**/*'
       cache:
         paths: []
     backend:
