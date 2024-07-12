@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 // app.use('/api', repoRouter);
 app.use('/api', emailRouter);
 
-app.get('/repos', async (req, res) => {
+app.get('/api/repos', async (req, res) => {
   const repoURL = process.env.URL;
 
   try {
