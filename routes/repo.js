@@ -5,6 +5,10 @@ require('dotenv').config();
 
 router.use(cors());
 
+router.get('/repos', (req, res) => {
+  res.json({ message: 'Repos!' });
+});
+
 // router.get('/', async (req, res) => {
 //   try {
 //     res.json('Reached to repo API router.');
