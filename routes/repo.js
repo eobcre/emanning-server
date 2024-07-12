@@ -3,11 +3,8 @@ const router = express.Router();
 const cors = require('cors');
 require('dotenv').config();
 
-router.use(cors());
-
-router.get('/repos', (req, res) => {
-  res.json({ message: 'Repos!' });
-});
+router.use(cors({ origin: process.env.CLIENT_URL }));
+// router.use(cors());
 
 // router.get('/', async (req, res) => {
 //   try {
