@@ -4,7 +4,13 @@ const nodemailer = require('nodemailer');
 const cors = require('cors');
 require('dotenv').config();
 
-router.use(cors());
+app.use(
+  cors({
+    origin: process.env.CLIENT_URL,
+    // credentials: true,
+  })
+);
+// router.use(cors());
 
 router.post('/emails', async (req, res) => {
   const { name, email, message } = req.body;
