@@ -5,7 +5,7 @@ require('dotenv').config();
 
 router.use(
   cors({
-    origin: process.env.CLIENT_URL,
+    origin: 'https://emanning.dev',
     methods: 'GET, POST, PUT, DELETE',
     credentials: true,
   })

@@ -5,7 +5,7 @@ const cors = require('cors');
 require('dotenv').config();
 
 cors({
-  origin: process.env.CLIENT_URL,
+  origin: 'https://emanning.dev',
   methods: 'GET, POST, PUT, DELETE',
   credentials: true,
 });
