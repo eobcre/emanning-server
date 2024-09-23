@@ -27,8 +27,16 @@ router.get('/repos', async (req, res) => {
   try {
     const response = await fetch(repoURL);
     const data = await response.json();
-    const repos = data.items.slice(0, 6);
-    res.json(repos);
+
+    const targetRepos = ['emanning-web-ui', 'feedback-survey'];
+
+    const filteredRepos = data.items.filter((repo) => targetRepos.includes(repo.name)).slice(0, 6);
+    res.json(filteredRepos);
+
+    // console.log('filteredRepos', filteredRepos);
+
+    // const repos = data.items.slice(0, 6);
+    // res.json(repos);
   } catch (error) {
     console.error('Error fetching data.', error);
     res.status(500).json({ error: 'Error fetching data.' });
