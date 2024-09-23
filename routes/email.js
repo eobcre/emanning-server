@@ -9,7 +9,7 @@ cors({
   methods: 'GET, POST, PUT, DELETE',
   credentials: true,
 });
-// router.use(cors());router.use(
+// router.use(cors());
 
 router.post('/emails', async (req, res) => {
   const { name, email, message } = req.body;
