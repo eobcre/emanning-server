@@ -28,7 +28,7 @@ router.get('/repos', async (req, res) => {
     const response = await fetch(repoURL);
     const data = await response.json();
 
-    const targetRepos = ['mobile-app-dev-client', 'emanning-web-ui', 'feedback-survey', 'task-manager-demo-merged'];
+    const targetRepos = ['emanning-web-ui', 'feedback-survey', 'task-manager-demo-merged', 'next-app'];
 
     const filteredRepos = data.items.filter((repo) => targetRepos.includes(repo.name)).slice(0, 6);
     res.json(filteredRepos);
